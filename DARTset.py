@@ -4,10 +4,12 @@ import pickle
 import cv2
 import imageio
 import numpy as np
+import torch
 from manotorch.manolayer import ManoLayer
 from pytorch3d.io import load_obj
 
-from DARTset_utils import (aa_to_rotmat, fit_ortho_param, ortho_project, plot_hand, rotmat_to_aa)
+from DARTset_utils import (aa_to_rotmat, fit_ortho_param, ortho_project,
+                           plot_hand, rotmat_to_aa)
 
 RAW_IMAGE_SIZE = 512
 BG_IMAGE_SIZE = 384
@@ -83,11 +85,13 @@ class DARTset():
             "verts_uvd": self.get_verts_uvd(idx),
             "ortho_intr": self.get_ortho_intr(idx),
             "sides": self.get_sides(idx),
+            "mano_pose": self.get_mano_pose(idx),
             "image_mask": self.get_image_mask(idx),
         }
 
     def get_joints_3d(self, idx):
         joints = self.joints_3d[idx].copy()
+        # * Transfer from UNITY coordinate system
         joints[:, 1:] = -joints[:, 1:]
         joints = joints[self.reorder_idx]
         joints = joints - joints[9] + np.array(
@@ -96,6 +100,7 @@ class DARTset():
 
     def get_verts_3d(self, idx):
         verts = pickle.load(open(self.verts_3d_paths[idx], "rb"))
+        # * Transfer from UNITY coordinate system
         verts[:, 1:] = -verts[:, 1:]
         verts = verts + self.get_joints_3d(idx)[5]
         if not self.use_full_wrist:
@@ -146,8 +151,13 @@ class DARTset():
         uvd = np.concatenate((ortho_proj_verts, d), axis=1)
         return uvd
 
+    def get_raw_mano_param(self, idx):
+        return self.raw_mano_param[idx].copy()
+
     def get_mano_pose(self, idx):
         pose = self.get_raw_mano_param(idx)  # [16, 3]
+
+        # * Transfer from UNITY coordinate system
         unity2cam = np.array([[1, 0, 0], [0, -1, 0], [0, 0, -1]]).astype(np.float32)
         root = rotmat_to_aa(unity2cam @ aa_to_rotmat(pose[0]))[None]
         new_pose = np.concatenate([root.reshape(-1), pose[1:].reshape(-1) + self.MANO_pose_mean], axis=0)  # [48]
@@ -175,6 +185,16 @@ if __name__ == "__main__":
         joints_uvd = output["joints_uvd"]
         verts_uvd = output["verts_uvd"]
         ortho_intr = output["ortho_intr"]
+        mano_pose = output["mano_pose"]
+
+        mano = ManoLayer(joint_rot_mode="axisang",
+                    use_pca=False,
+                    mano_assets_root="assets/mano_v1_2",
+                    center_idx=9,
+                    flat_hand_mean=True)
+
+        mano_joints = mano(torch.tensor(mano_pose).unsqueeze(0)).joints.numpy()[0]
+        mano_2d = ortho_project(mano_joints, ortho_intr)
 
         proj_2d = ortho_project(joints_3d, ortho_intr)
 
@@ -183,10 +203,11 @@ if __name__ == "__main__":
         mask = np.concatenate([mask, mask * 0, mask * 0], axis=2)
         frame_2 = cv2.addWeighted(frame_1, 0.5, mask, 0.5, 0)
 
-        all_2d_opt = {"ortho_proj": proj_2d, "gt": joints_2d, "uv": joints_uvd[:, :2]}
+        all_2d_opt = {"ortho_proj": proj_2d, "gt": joints_2d, "uv": joints_uvd[:, :2], "mano_2d": mano_2d}
         plot_hand(frame_1, all_2d_opt["uv"], linewidth=1)
-        plot_hand(frame_1, all_2d_opt["gt"], linewidth=1)
+        plot_hand(frame_1, all_2d_opt["gt"], linewidth=2)
         plot_hand(frame_1, all_2d_opt["ortho_proj"], linewidth=1)
+        plot_hand(frame_1, all_2d_opt["mano_2d"], linewidth=1)
 
         img_list = [image, frame_1, frame_2]
         comb_image = np.hstack(img_list)

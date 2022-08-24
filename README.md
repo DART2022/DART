@@ -9,6 +9,7 @@ To visualize the data, please follow the instructions:
 Please make sure you have the following dependencies installed:
 * numpy
 * cv2
+* imageio
 * pytorch
 * pytorch3d (>= 0.6)
 * [manotorch](https://github.com/lixiny/manotorch.git)
@@ -17,13 +18,13 @@ Please make sure you have the following dependencies installed:
 
 ## Data
 
-Please download the data from [train]() and [test]() and put them in the `data/DARTset` folder.
+Please download the data from [DropBox](https://tinyurl.com/2p875pa3) and put them in the `data/DARTset` folder.
 
-Then download [mano](https://mano.is.tue.mpg.de) from the official website and put it in the `assets` folder.
+Then download [MANO](https://mano.is.tue.mpg.de) from the official website and put it in the `assets` folder.
 
 Your directory should look like this:
 
-```shell
+```
 .
 ├── DARTset.py
 ├── DARTset_utils.py
