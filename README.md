@@ -46,4 +46,4 @@ Your directory should look like this:
 python DARTset.py
 ```
 
-You can modify Line165 in DARTset.py to change the `train/test` data split.
+You can modify this [line](https://github.com/DART2022/DARTset/blob/f619f609b1902b344fc5bbba57d080763a5496eb/DARTset.py#L175) in DARTset.py to change the `train/test` data split.
