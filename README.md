@@ -2,6 +2,8 @@
 
 This is the toolkit for the DARTset project.
 
+To postprocess the intermediate output yield by DART's GUI, please refer to postprocess folder.
+
 To visualize the data, please follow the instructions:
 
 ## Environment
