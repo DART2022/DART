@@ -6,6 +6,10 @@ To postprocess the intermediate output yield by DART's GUI, please refer to post
 
 To visualize the data, please follow the instructions:
 
+## Update:
+
+- 2022.09.29: **DART GUI source code open**, please download at [DART's GUI source code](https://drive.google.com/file/d/1xtfc-fMHR5ax-e5S5Drx53Rm2ddL5mHs/view?usp=sharing). ONLY ACADEMIC USAGE ARE ALLOWED!!!
+
 ## Environment
 
 Please make sure you have the following dependencies installed:
