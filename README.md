@@ -4,13 +4,13 @@
 
   <h1 align="center">DART: Articulated Hand Model with Diverse Accessories and Rich Textures</h1>
   <p align="center">
-    <a href="https://tomguluson92.github.io/"><strong>Daiheng Gao</strong></a>
+    <a href="https://tomguluson92.github.io/"><strong>Daiheng Gao</strong><sup>*</sup></a>
     ·
-    <a href="https://ps.is.tuebingen.mpg.de/person/yxiu"><strong>Yuliang Xiu</strong></a>
+    <a href="https://ps.is.tuebingen.mpg.de/person/yxiu"><strong>Yuliang Xiu</strong><sup>*</sup></a>
     ·
-    <a href="https://kailinli.top/#"><strong>Kailin Li</strong></a>
+    <a href="https://kailinli.top/#"><strong>Kailin Li</strong><sup>*</sup></a>
     ·
-    <a href="https://lixiny.github.io/"><strong>Lixin Yang</strong></a>
+    <a href="https://lixiny.github.io/"><strong>Lixin Yang</strong><sup>*</sup></a>
     ·
     <strong>Feng Wang</strong>
     ·
