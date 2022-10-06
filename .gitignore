@@ -131,3 +131,4 @@ dmypy.json
 # misc
 data/DARTset
 assets/mano_v1_2
+.idea
