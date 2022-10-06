@@ -1,3 +1,49 @@
+<!-- PROJECT LOGO -->
+
+<p align="center">
+
+  <h1 align="center">DART: Articulated Hand Model with Diverse Accessories and Rich Textures</h1>
+  <p align="center">
+    <a href="https://tomguluson92.github.io/"><strong>Daiheng Gao</strong></a>
+    ·
+    <a href="https://ps.is.tuebingen.mpg.de/person/yxiu"><strong>Yuliang Xiu</strong></a>
+    ·
+    <a href="https://kailinli.top/#"><strong>Kailin Li</strong></a>
+    ·
+    <a href="https://lixiny.github.io/"><strong>Lixin Yang</strong></a>
+    ·
+    <strong>Feng Wang</strong>
+    ·
+    <strong>Peng Zhang</strong>
+    ·
+    <strong>Bang Zhang</strong>
+    ·
+    <a href="https://www.mvig.org/"><strong>Cewu Lu</strong></a>
+   ·
+    <a href="https://www.cs.sfu.ca/~pingtan/"><strong>Ping Tan</strong></a>
+  </p>
+  <h2 align="center">Neurips 2022 (Dataset & Benchmark Track)</h2>
+  <div align="center">
+    <img src="./assets/teaser.jpg" alt="Logo" width="100%">
+  </div>
+
+  <p align="center">
+  <br>
+    <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
+    <br></br>
+    <a href='https://arxiv.org/abs/2112.09127'>
+      <img src='https://img.shields.io/badge/Paper-PDF-green?style=for-the-badge&logo=arXiv&logoColor=green' alt='Paper PDF'>
+    </a>
+    <a href='https://dart2022.github.io/' style='padding-left: 0.5rem;'>
+      <img src='https://img.shields.io/badge/DART-Page-orange?style=for-the-badge&logo=Google%20chrome&logoColor=orange' alt='Project Page'>
+    <a href="https://www.youtube.com/watch?v=kvWqtdLf6hs"><img alt="youtube views" title="Subscribe to my YouTube channel" src="https://img.shields.io/youtube/views/ZufrPvooR2Q?logo=youtube&labelColor=ce4630&style=for-the-badge"/></a>
+  </p>
+</p>
+
+<br />
+<br />
+
+
 # DARTset
 
 This is the toolkit for the DARTset project.
