@@ -60,7 +60,11 @@
 
 ## Data
 
-Please download the data from [DropBox](https://www.dropbox.com/sh/aosmkomcm4sznsc/AADyr7gkki5uszg44Riv0nZ5a?dl=0) or [Baidu Pan (4w3r)](https://pan.baidu.com/share/init?surl=xOV3FkNFxNS-mYrHTXd8Iw) and put them in the `data/DARTset` folder.
+Please download the data from [HuggingFace](https://huggingface.co/datasets/Yuliang/DART) or [Baidu Pan (4w3r)](https://pan.baidu.com/share/init?surl=xOV3FkNFxNS-mYrHTXd8Iw) and put them in the `data/DARTset` folder.
+
+```bash
+git clone https://huggingface.co/datasets/Yuliang/DART data/DARTset
+```
 
 Then download [MANO](https://mano.is.tue.mpg.de) from the official website and put it in the `assets` folder.
 
