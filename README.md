@@ -44,8 +44,9 @@
 
 ## Update
 
+- [2024.04.01] **DARTset could be easily cloned from Huggingface/Dataset** at [DARTset](https://huggingface.co/datasets/Yuliang/DART)
 - [2022.10.07] **DART's raw textures+accessories are released** at [RAW](https://drive.google.com/file/d/1_KPzMFjXLHagPhhos7NXvzdzMMN-b1bd/view)
-- [2022.09.29] **DART Unity GUI's source code is publicly available** at [GUI](https://drive.google.com/file/d/1xtfc-fMHR5ax-e5S5Drx53Rm2ddL5mHs/view?usp=sharing).
+- [2022.09.29] **DART Unity GUI's source code is publicly available** at [GUI](https://drive.google.com/file/d/1xtfc-fMHR5ax-e5S5Drx53Rm2ddL5mHs/view?usp=sharing)
 
 ## Environment
 
